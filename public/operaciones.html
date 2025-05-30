@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale 1.0">
+        <style>
+            /*:D*/
+        </style>
+    </head>
+    <body>
+
+        <h2 id="saludo"></h2>
+        <p></p>
+
+<script>
+        const nombreDeUsuario = localStorage.getItem ("nombreUsuario");
+        const h2 = document.getElementById ("saludo");
+
+        if (nombreDeUsuario) {
+            h2.textContent = `hola ${nombreDeUsuario} ¿en que podemos ayudarte?`;
+        }
+        else {
+            h2.textContent = `hola, ¿en que podemos ayudarte?`
+        }
+        
+</script>
+
+
+    </body>
+</html>

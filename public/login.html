@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-color: whitesmoke;
+            color: #222;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Roboto, Helvetica, Arial;
+            align-items: center;
+        }
+        h2{
+            color:#222;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            text-align: center;
+
+        }
+
+        .all-form {
+            background-color: #d1d1d1;
+            color: #222;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90vw;
+            max-width: 500px;
+            min-width: 300px;
+            border-radius: 10px;
+            
+        }
+
+        .form-group {
+            border: 1px solid #979797;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #222;
+            border-radius: 20px;
+            padding: 10px 10px;
+            text-align: left;
+            margin-top: 5px;
+            margin-left: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+        }
+        .label{
+            color: #979797;
+            display: inline-block;
+            width: 30%;
+            margin-right: 10px;
+            text-align: left;
+            flex-shrink: 0;
+        }
+        .input{
+            width: 70%;
+            padding: 10px 0px;
+            font-size: 1em;
+            box-sizing: border-box;
+            text-align: center;
+
+            background-color: #d1d1d1;
+            border: 1px solid #d1d1d1;
+            outline: none;
+        }
+        .input :focus{
+            border-bottom: 1px solid #007bff;
+        }
+        button[type="submit"] {
+            background-color: #758da7;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="title">inicia sesion</h2>
+    <div class="all-form">
+        <form action="/login" method="post" >
+            <div class="form-group">
+                <label class="label" for="nombre">nombre:</label>
+                <input class="input" type="text" id="nombre" name="nombre" placeholder="ingresa tu nombre">
+            </div>
+            <div class="form-group">
+                <label class="label" for="cedula">cedula:</label>
+                <input class="input" type="password" id="cedula" name="cedula" placeholder="ingresa tu cedula">
+            </div>
+            <div class="form-group">
+                <label class="label" for="codigo">codigo:</label>
+                <input class="input" type="password" id="codigo" name="codigo" placeholder="codigo">
+            </div>
+            <button type="submit">enviar</button>
+        </form>
+    </div>
+<script>
+
+    const allForm = document.getElementById ('form')
+    const inputname = document.getElementById ('nombre')
+    const inputcedula = document.getElementById ('cedula')
+    const inputcodigo = document.getElementById ('codigo')
+
+    allForm.addEventListener ("submit",function(event){
+    event.preventDefault();
+
+    const nombre = inputname.value.trim();
+    localStorage.setItem("nombreUsuario", nombre);
+
+
+    window.location.href= "operaciones.html";
+
+   });
+
+ console.log ("!el script de javascript se ha cargado correctamente!");
+
+</script>
+</body>
+</html>
